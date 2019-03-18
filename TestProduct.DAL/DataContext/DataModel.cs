@@ -40,5 +40,6 @@ namespace TestProduct.DAL.DataContext
                 .Property(e => e.Value)
                 .IsUnicode(false);
         }
+        
     }
 }

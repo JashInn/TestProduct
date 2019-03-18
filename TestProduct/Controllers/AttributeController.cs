@@ -25,7 +25,7 @@ namespace TestProduct.Controllers
         public ActionResult GetAttributesForProductByCategory(int id)
         {
             var attributeList = productAttributeMapService.GetProductAttributeMapByCategoryIdForProductCreate(id);
-            return Json(attributeList, JsonRequestBehavior.AllowGet);
+            return View("_AttributeControl", attributeList);
         }
     }
 }

@@ -25,7 +25,7 @@
                 @Html.LabelFor(m => m.Category)
                 @Html.DropDownListFor(m => m.CategoryId, (SelectList)ViewBag.CategoryList, "--Select Category--", new { @class = "form-control" })
             </div>
-            <div id="Attributes">
+            <div class="form-group" id="Attributes">
 
             </div>
             <input type="submit" title="Submit" class="btn btn-default" />
@@ -33,7 +33,7 @@
     </div>
 }
     <script>
-    var GetAttributeUrl = '@Url.Action("GetAttributes", "Attribute")';
+    var GetAttributeUrl = '@Url.Action("GetAttributesForProductByCategory", "Attribute")';
     $("#CategoryId").change(function () {
         var SelectedCategoryId = $("#CategoryId").val();
         $.ajax({

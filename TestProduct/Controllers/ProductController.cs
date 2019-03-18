@@ -32,11 +32,19 @@ namespace TestProduct.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product,List<ProductAttributeMap> attributeMaps)
         {
+            product.ProductAttributeMaps = attributeMaps;
             ProductService.AddNewProduct(product);
+
             return RedirectToAction("List");
         }
-       
+        public ActionResult Details(int id)
+        {
+            Product product = ProductService.GetProductById(id);
+            return View(product);
+        }
+
+
     }
 }

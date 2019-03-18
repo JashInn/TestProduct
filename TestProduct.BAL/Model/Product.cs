@@ -23,5 +23,7 @@ namespace TestProduct.BAL.Model
         [Display(Name="Category Name")]
         public Category Category { get; set; }
 
+        public List<ProductAttributeMap> ProductAttributeMaps { get; set; }
+
     }
 }

@@ -15,7 +15,7 @@ namespace TestProduct.BAL
             {
                 x.CreateMap<Model.Category, TestProduct.DAL.DataContext.Category>();
                 x.CreateMap<Model.Product, TestProduct.DAL.DataContext.Product>();
-                x.CreateMap<Model.Attribute, TestProduct.DAL.DataContext.Attribute>();
+                x.CreateMap<Model.Attribute, TestProduct.DAL.DataContext.Attribute>().ForMember(dest=>dest.Name,opt=>opt.MapFrom(src=>src.AttributeName)).ReverseMap();
                 x.CreateMap<Model.ProductAttributeMap, TestProduct.DAL.DataContext.ProductAttributeMap>();
             });
         }

@@ -17,7 +17,7 @@ namespace TestProduct.DAL.Providers
             get { return _entities; }
             set { _entities = value; }
         }
-
+        
         public virtual IQueryable<T> GetAll()
         {
 
@@ -25,7 +25,7 @@ namespace TestProduct.DAL.Providers
             return query;
         }
 
-        public IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        public virtual IQueryable<T> FindBy(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
 
             IQueryable<T> query = _entities.Set<T>().Where(predicate);

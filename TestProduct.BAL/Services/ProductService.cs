@@ -14,6 +14,7 @@ namespace TestProduct.BAL.Services
         ProductProvider productProvider = new ProductProvider();
         public void AddNewProduct(Product product)
         {
+            product.ProductAttributeMaps.ForEach(m => m.Attribute = null);
             productProvider.Add(Mapper.Map<TestProduct.DAL.DataContext.Product>(product));
             productProvider.Save();
         }

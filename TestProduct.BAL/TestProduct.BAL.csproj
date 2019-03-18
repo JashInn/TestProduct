@@ -62,12 +62,15 @@
     <Compile Include="Model\Attribute.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductAttributeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceInterfaces\IAttributeService.cs" />
     <Compile Include="ServiceInterfaces\ICategoryService.cs" />
+    <Compile Include="ServiceInterfaces\IProductAttributeMapService.cs" />
     <Compile Include="ServiceInterfaces\IProductService.cs" />
     <Compile Include="Services\AttributeService.cs" />
     <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\ProductAttributeMapService.cs" />
     <Compile Include="Services\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
