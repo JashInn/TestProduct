@@ -51,9 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContext\Attribute.cs" />
+    <Compile Include="DataContext\AttributeCategoryMap.cs" />
     <Compile Include="DataContext\Category.cs" />
     <Compile Include="DataContext\DataModel.cs" />
     <Compile Include="DataContext\Product.cs" />
+    <Compile Include="DataContext\ProductAttributeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\GenericProvider.cs" />
     <Compile Include="Providers\IProvider.cs" />

@@ -6,26 +6,23 @@ namespace TestProduct.DAL.DataContext
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Product")]
-    public partial class Product
+    [Table("Attribute")]
+    public partial class Attribute
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Attribute()
         {
+            AttributeCategoryMaps = new HashSet<AttributeCategoryMap>();
             ProductAttributeMaps = new HashSet<ProductAttributeMap>();
         }
 
         public int Id { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string Name { get; set; }
 
-        public string Description { get; set; }
-
-        public int? CategoryId { get; set; }
-
-        public virtual Category Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AttributeCategoryMap> AttributeCategoryMaps { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductAttributeMap> ProductAttributeMaps { get; set; }

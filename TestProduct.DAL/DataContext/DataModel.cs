@@ -10,15 +10,20 @@ namespace TestProduct.DAL.DataContext
         public DataModel()
             : base("name=DataModel")
         {
-            var ensureDLLIsCopied =
-                System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
+        public virtual DbSet<Attribute> Attributes { get; set; }
+        public virtual DbSet<AttributeCategoryMap> AttributeCategoryMaps { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductAttributeMap> ProductAttributeMaps { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Attribute>()
+                .Property(e => e.Name)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Category>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
@@ -29,6 +34,10 @@ namespace TestProduct.DAL.DataContext
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.Description)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ProductAttributeMap>()
+                .Property(e => e.Value)
                 .IsUnicode(false);
         }
     }
