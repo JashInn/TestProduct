@@ -11,8 +11,4 @@ namespace TestProduct.DAL.RepositoryInterfaces
     {
 
     }
-    interface IProductRepository : IProvider<Product>
-    {
-
-    }
 }

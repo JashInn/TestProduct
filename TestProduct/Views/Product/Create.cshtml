@@ -1,28 +1,48 @@
 ﻿@using TestProduct.BAL.Model;
 @model Product
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Craete Product";
 }
-
-@using(Html.BeginForm()){
+<h2>
+    Create New Product
+</h2>
+@using (Html.BeginForm())
+{
 
     <div class="col-md-12">
         <div class="row col-md-12">
             <div class="form-group">
                 @Html.LabelFor(m => m.Name)
-                @Html.EditorFor(m => m.Name, new { @class = "from-control" })
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
             </div>
-            
+
             <div class="form-group">
                 @Html.LabelFor(m => m.Description)
-                @Html.TextAreaFor(m => m.Description, new { @class = "from-control" })
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
             </div>
-            
+
             <div class="form-group">
                 @Html.LabelFor(m => m.Category)
-                @Html.DropDownListFor(m => m.CategoryId, (SelectList)ViewBag.CategoryList, new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.CategoryId, (SelectList)ViewBag.CategoryList, "--Select Category--", new { @class = "form-control" })
             </div>
-            <input type="submit" title="Submit" class="btn btn-default"/>
+            <div id="Attributes">
+
+            </div>
+            <input type="submit" title="Submit" class="btn btn-default" />
         </div>
     </div>
-} 
+}
+    <script>
+    var GetAttributeUrl = '@Url.Action("GetAttributes", "Attribute")';
+    $("#CategoryId").change(function () {
+        var SelectedCategoryId = $("#CategoryId").val();
+        $.ajax({
+            type: 'GET',
+            url: GetAttributeUrl + "/" + SelectedCategoryId,
+            success: function (data) {
+                $("#Attributes").html(data);
+            }
+            });
+
+    });
+    </script>

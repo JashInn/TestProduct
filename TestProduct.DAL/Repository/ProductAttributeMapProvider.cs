@@ -1,0 +1,11 @@
+﻿using TestProduct.DAL.DataContext;
+using TestProduct.DAL.Providers;
+using TestProduct.DAL.RepositoryInterfaces;
+
+namespace TestProduct.DAL.Repository
+{
+    public class ProductAttributeMapProvider : GenericProvider<DataModel, ProductAttributeMap>, IProductAttributeMapRepository
+    {
+
+    }
+}

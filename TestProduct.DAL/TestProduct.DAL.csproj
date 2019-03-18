@@ -60,7 +60,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\GenericProvider.cs" />
     <Compile Include="Providers\IProvider.cs" />
+    <Compile Include="RepositoryInterfaces\IAttributeRepository.cs" />
     <Compile Include="RepositoryInterfaces\ICategoryRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IProductRepository.cs" />
+    <Compile Include="Repository\AttributeProvider.cs" />
     <Compile Include="Repository\CategoryProvider.cs" />
     <Compile Include="Repository\ProductProvider.cs" />
   </ItemGroup>
