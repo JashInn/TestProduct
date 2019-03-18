@@ -1,0 +1,4 @@
+Step 1: Create Database with the help of script in
+"SQL script" folder. Replace the destination path of the database file.
+
+Step 2: Replace connection string in config file.
